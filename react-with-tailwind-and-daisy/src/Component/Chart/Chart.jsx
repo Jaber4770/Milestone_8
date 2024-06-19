@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, BarChart, Bar, PieChart, Pie } from 'recharts';
 
 
 
@@ -6,57 +6,68 @@ const Chart = () => {
 
     const students = [
         {
-          id: 1,
-          name: "John Doe",
-          math: 85
+            id: 1,
+            name: "John Doe",
+            math: 75,
+            phyics: 80
         },
         {
-          id: 2,
-          name: "Jane Smith",
-          math: 90
+            id: 2,
+            name: "Jane Smith",
+            math: 80,
+            phyics: 80
         },
         {
-          id: 3,
-          name: "Alice Johnson",
-          math: 78
+            id: 3,
+            name: "Alice Johnson",
+            math: 98,
+            phyics: 80
         },
         {
-          id: 4,
-          name: "Mark Davis",
-          math: 92
+            id: 4,
+            name: "Mark Davis",
+            math: 62,
+            phyics: 80
         },
         {
-          id: 5,
-          name: "Emma Brown",
-          math: 87
+            id: 5,
+            name: "Emma Brown",
+            math: 87,
+            phyics: 80
         },
         {
-          id: 6,
-          name: "Liam Wilson",
-          math: 83
+            id: 6,
+            name: "Liam Wilson",
+            math: 73,
+            phyics: 80
         }
-      ];
-      
-    // name: 'Page A',
-    // uv: 4000,
-    // pv: 2400,
-    // amt: 2400,
+    ];
 
     return (
-        <div>
-        
-{/*             
+        <>
+            <LineChart width={700} height={500} data={students}>
+                <XAxis></XAxis>
+                <YAxis></YAxis>
+                <Line type="monotone" dataKey='math' stroke='#82ca9d' strokeWidth={2} />
+            </LineChart>
 
-                    <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-           
- */}
-<ResponsiveContainer width='100%' height="100%">
-        <LineChart width={700} height={500} data={students}>
-            <Line type="monotone" dataKey='math'></Line>
-        </LineChart>
-</ResponsiveContainer>
+            <LineChart width={500} height={500} data={students}>
+                <XAxis></XAxis>
+                <YAxis></YAxis>
+                <Line type="monotone" dataKey="math" stroke='white' strokeWidth={2}></Line>
+            </LineChart>
 
-        </div>
+            <BarChart height={600} width={600} data={students}>
+                <XAxis></XAxis>
+                <YAxis></YAxis>
+                <Bar dataKey="math" stroke='green' strokeWidth={2}></Bar>
+            </BarChart>
+
+            <PieChart height={300} width={300} >
+                <Pie data={students} dataKey="math" cy="50%" cx="50%" outerRadius={60} fill="#82ca9d" strokeWidth={2}></Pie>
+                <Pie data={students} dataKey="phyics" cy="50%" cx="50%" innerRadius={70} outerRadius={90} stroke='blue' strokeWidth={2} label fill='green'></Pie>
+            </PieChart>
+        </>
     );
 };
 
