@@ -1,11 +1,16 @@
-import './App.css'
+import Chart from './Component/Chart/Chart'
+import NavBar from './Component/DaisyNavbar/NavBar/NavBar'
+import GymPlans from './Component/GymPlans/GymPlans/GymPlans'
+// import DaisyNavbar from './Component/DaisyNavbar/DaisyNavbar'
 
 function App() {
 
   return (
     <>
-    <h1 className='text-5xl'>Avatar</h1>
-    
+      {/* <DaisyNavbar></DaisyNavbar> */}
+      <NavBar></NavBar>
+      <GymPlans></GymPlans>
+      <Chart></Chart>
     </>
   )
 }
