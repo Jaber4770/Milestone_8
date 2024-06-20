@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './SingleUser.css'
 
 const SingleUser = ({ user }) => {
@@ -7,7 +8,7 @@ const SingleUser = ({ user }) => {
             <h3>name: {name}</h3>
             <p>email: {email}</p>
             <p>phone: {phone}</p>
-            <p>id: {id}</p>
+            <Link to={`/user/${id}`}>See Details</Link>
         </div>
     );
 };

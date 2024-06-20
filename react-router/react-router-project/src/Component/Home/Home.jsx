@@ -26,6 +26,9 @@ const Home = () => {
                 <li>
                     <Link to="/user">Users</Link>
                 </li>
+                <li>
+                    <Link to="/posts">Posts</Link>
+                </li>
             </ul>
             {
                 <Outlet></Outlet>
