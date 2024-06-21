@@ -1,35 +1,37 @@
-import { Link, Outlet } from "react-router-dom";
-
+import { NavLink, Outlet } from "react-router-dom";
+import "./Home.css"
 
 const Home = () => {
     return (
         <div>
-            
+
             <h1>Hello from Home.</h1>
 
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/About">About</Link>
-                </li>
-                <li>
-                    <Link to="/Service">Service</Link>
-                </li>
-                <li>
-                    <Link to="/Login">Login</Link>
-                </li>
-                <li>
-                    <Link to="/Contact">Contact</Link>
-                </li>
-                <li>
-                    <Link to="/user">Users</Link>
-                </li>
-                <li>
-                    <Link to="/posts">Posts</Link>
-                </li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/About">About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/Service">Service</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/Login">Login</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/Contact">Contact</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/user">Users</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/posts">Posts</NavLink>
+                    </li>
+                </ul>
+            </nav>
             {
                 <Outlet></Outlet>
             }
