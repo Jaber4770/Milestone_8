@@ -36,6 +36,9 @@ const Home = () => {
                     <li>
                         <NavLink to="/statefulForm">Stateful Form</NavLink>
                     </li>
+                    <li>
+                        <NavLink to='/formref'>Ref Form</NavLink>
+                    </li>
                 </ul>
             </nav>
             {

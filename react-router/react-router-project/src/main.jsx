@@ -18,6 +18,7 @@ import PostDetails from './Component/PostDetails/PostDetails.jsx';
 import NotFound from './Component/NotFound/NotFound.jsx';
 import Form from './Component/Form/Form.jsx';
 import StatefulForm from './Component/StatefulForm/StatefulForm/StatefulForm.jsx';
+import FormRef from './Component/FormRef/FormRef.jsx';
 
 
 const router = createBrowserRouter([
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: '/statefulForm',
         element: <StatefulForm></StatefulForm>
+      },
+      {
+        path: '/formref',
+        element: <FormRef></FormRef>
       }
     ]
   }
