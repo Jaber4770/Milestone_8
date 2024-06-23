@@ -30,6 +30,12 @@ const Home = () => {
                     <li>
                         <NavLink to="/posts">Posts</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/form">Form</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/statefulForm">Stateful Form</NavLink>
+                    </li>
                 </ul>
             </nav>
             {
