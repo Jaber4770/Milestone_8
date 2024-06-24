@@ -1,11 +1,18 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "./Home.css"
+import "./Home.css";
+import { useContext } from "react";
+import { DataContext } from "../../main";
+
+
+
 
 const Home = () => {
+    const data = useContext(DataContext);
     return (
         <div>
 
             <h1>Hello from Home.</h1>
+            <p>Data from Context API: {data}</p>
 
             <nav>
                 <ul>
@@ -38,6 +45,15 @@ const Home = () => {
                     </li>
                     <li>
                         <NavLink to='/formref'>Ref Form</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/hookform'>Hook Form</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/reuseableformSignUP'>Reuseable Form Sign UP</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/reuseableformLogin'>Reuseable Form Log in</NavLink>
                     </li>
                 </ul>
             </nav>

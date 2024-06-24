@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -19,7 +19,14 @@ import NotFound from './Component/NotFound/NotFound.jsx';
 import Form from './Component/Form/Form.jsx';
 import StatefulForm from './Component/StatefulForm/StatefulForm/StatefulForm.jsx';
 import FormRef from './Component/FormRef/FormRef.jsx';
+import HookForm from './Component/HookForm/HookForm.jsx';
+import ReUseableForm from './Component/ReuseableForm/ReUseableForm.jsx';
 
+export const DataContext = createContext('Gold');
+
+<DataContext.Provider value="Gold">
+  <Home></Home>
+</DataContext.Provider>
 
 const router = createBrowserRouter([
   {
@@ -50,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: `/user/:userId`,
-        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
         element: <UserDetails></UserDetails>
       },
       {
@@ -60,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/posts/:postID",
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postID}`),
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postID}`),
         element: <PostDetails></PostDetails>
       },
       {
@@ -74,6 +81,18 @@ const router = createBrowserRouter([
       {
         path: '/formref',
         element: <FormRef></FormRef>
+      },
+      {
+        path: '/hookform',
+        element: <HookForm></HookForm>
+      },
+      {
+        path: '/reuseableformSignUP',
+        element: <ReUseableForm formTitle={"Sign up"} btnText={'Submit'}></ReUseableForm>
+      },
+      {
+        path: '/reuseableformLogin',
+        element: <ReUseableForm formTitle={"Log in"} btnText={'Log in'}></ReUseableForm>
       }
     ]
   }
